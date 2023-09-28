@@ -8,6 +8,7 @@ import { CsapadekComponent } from './csapadek/csapadek.component';
 import { LeghomersekletComponent } from './leghomerseklet/leghomerseklet.component';
 import { VizmertekComponent } from './vizmertek/vizmertek.component';
 import { ZminosegComponent } from './zminoseg/zminoseg.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ZminosegComponent } from './zminoseg/zminoseg.component';
     CsapadekComponent,
     LeghomersekletComponent,
     VizmertekComponent,
-    ZminosegComponent
+    ZminosegComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

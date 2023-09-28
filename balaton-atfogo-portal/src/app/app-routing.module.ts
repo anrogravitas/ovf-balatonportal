@@ -6,9 +6,10 @@ import { CsapadekComponent } from './csapadek/csapadek.component';
 import { LeghomersekletComponent } from './leghomerseklet/leghomerseklet.component';
 import { VizmertekComponent } from './vizmertek/vizmertek.component';
 import { ZminosegComponent } from './zminoseg/zminoseg.component';
+import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
-  { path: '', component: AppComponent, pathMatch: 'full' },
+  { path: '', component: MenuComponent, pathMatch: 'full' },
   { path: 'szeladatok', component: SzaladatokComponent},
   { path: 'csapadek', component: CsapadekComponent},
   { path: 'leghomerseklet', component: LeghomersekletComponent},
