@@ -1,0 +1,71 @@
+<div class="table">
+    <div class="header">
+      <div>
+        <img src="../assets/szel.png" alt="szel">
+      </div>
+      <div>
+        <h1>Széladatok</h1>
+      </div>
+      <div>
+        <p id="currentTime">{{ currentTime | date:'HH:mm'}}</p>
+      </div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th id="place">
+            Helyszín
+          </th>
+          <th id="first">
+            Maximális széllökés <br /> <span>[km/h]</span>
+          </th>
+          <th id="second">
+            Szélirány <br /> <span>[°]</span>
+          </th>
+          <th id="third">
+            Szélsebesség <br /> <span>[km/h]</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let platform of displayedPlatforms; let i = index">
+          <div class="marquee" [style.width.px]="getMarqueeWidth()">
+            <div class="marquee-block">
+              <div class="spans" [ngClass]="{'to-left': platform.name.length > 13}">
+                <span>
+                  <td>{{ platform.name }}</td>
+                </span>
+                <span>
+                  <td>{{ platform.name }}</td>
+                </span>
+              </div>
+            </div>
+          </div>
+          <td>{{ platform.szellokes }}</td>
+          <td>{{ platform.szelirany }}</td>
+          <td>{{ platform.szelsebesseg }}</td>
+        </tr>
+      </tbody>
+      
+    </table>
+  </div>
+<!--
+  <div class="marquee-wrapper">
+    <div class="container">
+      <div class="marquee-block">
+        <div class="marquee-inner to-left" *ngFor="let platform of displayedPlatforms; let i = index">
+          <span>
+            <div class="marquee-item">
+              <p class="text-white">{{ platform.name }}</p>
+            </div>
+          </span>
+          <span>
+            <div class="marquee-item">
+              <p class="text-white">{{ platform.name }}</p>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  -->

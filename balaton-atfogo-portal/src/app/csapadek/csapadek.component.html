@@ -1,0 +1,42 @@
+<div class="table">
+    <div class="header">
+      <div>
+        <img src="../assets/csapadek.png" alt="csapadek">
+      </div>
+      <div>
+        <h1>Csapadék</h1>
+      </div>
+      <div>
+        <p id="currentTime">{{ currentTime | date:'HH:mm'}}</p>
+      </div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th id="place">
+            Helyszín
+          </th>
+          <th id="first">
+            Csapadékösszeg <br /> <span>[mm]</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let platform of displayedPlatforms; let i = index" >
+          <div class="marquee"  [style.width.px]="getMarqueeWidth()">
+            <div class="marquee-block">
+              <div class="spans" [ngClass]="{'to-left': platform.name.length > 13}">
+                <span>
+                  <td>{{ platform.name }}</td>
+                </span>
+                <span>
+                  <td>{{ platform.name }}</td>
+                </span>
+              </div>
+            </div>
+          </div>
+          <td>{{ platform.csapadek }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

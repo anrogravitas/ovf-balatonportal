@@ -1,0 +1,59 @@
+<div class="table">
+    <div class="header">
+      <div>
+        <img src="../assets/vizminoseg.png" alt="vizminoseg">
+      </div>
+      <div>
+        <h1>Vízminőségi adatok</h1>
+      </div>
+      <div>
+        <p id="currentTime">{{ currentTime | date:'HH:mm'}}</p>
+      </div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th id="place">
+            Helyszín
+          </th>
+          <!--<th id="first">
+            Oldott oxigén <br /> <span>[%]</span>
+          </th>
+          <th id="second">
+            pH(helyszíni mérés) <br /> <span>[-]</span>
+          </th>
+          <th id="third">
+            Zavarosság nefelometriás <br /><span>[FNU]</span>
+          </th>-->
+          <th id="first">
+            Oldott oxigén <br /> <span>[%]</span>
+          </th>
+          <th id="second">
+            ph(helyszíni mérés) <br /> <span>[-]</span>
+          </th>
+          <th id="third">
+            Zavarosság nefelometriás <br /> <span>[FNU]</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let platform of displayedPlatforms; let i = index" [ngClass]="{'marque-three': isThreeTd(), 'marquee-one': !isThreeTd()}">
+          <div class="marquee" [style.width.px]="getMarqueeWidth()">
+            <div class="marquee-block">
+              <div class="spans" [ngClass]="{'to-left': platform.name.length > 13}">
+                <span>
+                  <td>{{ platform.name }}</td>
+                </span>
+                <span>
+                  <td>{{ platform.name }}</td>
+                </span>
+              </div>
+            </div>
+          </div>
+          <td>{{ platform.oxigen }}</td>
+          <td>{{ platform.ph }}</td>
+          <td>{{ platform.zavarossag }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

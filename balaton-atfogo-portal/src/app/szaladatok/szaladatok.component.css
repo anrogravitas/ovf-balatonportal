@@ -1,0 +1,160 @@
+/*TODO: Style.css ben: margin:0px; padding:0px*/
+.table{
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #193C6C;
+    width: 100%;
+    height: 165px;
+}
+.header div{
+    margin: 20px;
+}
+#currentTime{
+    font-weight: bold;
+}
+table{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    border-collapse:collapse;
+}
+thead{
+    background-color: #0E4C89;
+}
+
+table tr th:nth-child(1), table tr td:nth-child(1){
+    text-align: left;
+}
+table tr td{
+    text-align: center;
+    font-weight: bold;
+    animation: dropdown 1s ease-in-out;
+}
+tbody tr:nth-child(even){
+    background-color: #193C6C;
+}
+tbody tr:nth-child(odd){
+    background-color: #229AA9;
+}
+img{
+    width: 95px;
+}
+th, td {
+    padding: 5px;  
+}
+thead tr th:nth-child(1), tbody tr td:nth-child(1){
+    padding-left: 10px;
+}
+thead tr th:last-child, tbody tr td:last-child{
+    padding-right: 10px;
+}
+thead{
+    height: 220px;
+    padding: 10px;
+}
+/*LCD screen*/
+@media only screen and (max-width: 1920px) {
+    h1{
+        font-size: 96px;
+    }
+    #currentTime{
+        font-size: 90px;
+    }
+    #place{
+        width: 30% !important;
+        font-size: 75px;
+    }
+    #first, #second, #third{
+        width: 23.33% !important;
+        font-size: 60px;
+    }
+    table thead tr th span{
+        font-size: 35px;
+    }
+    tbody tr{
+        height: 139px;
+    }
+    .spans > * > *{
+        height: 127px;
+        vertical-align: middle;
+    }
+    tbody td{
+        font-size: 70px;
+    }
+
+    .marquee-block {
+        width: 1900px;
+    }
+}
+/*KIOSK screen*/
+@media only screen and (max-width: 1080px) {
+    h1{
+        font-size: 64px;
+    }
+    #currentTime{
+        font-size: 60px;
+    }
+    #place{
+        width: 45% !important;
+        font-size: 70px;
+    }
+    #first, #second, #third{
+        width: 17% !important;
+        font-size: 36px;
+    }
+    table thead tr th span{
+        font-size: 24px;
+    }
+    tbody tr{
+        height: 153.5px;
+    }
+    .spans > * > *{
+        height: 130px;
+        vertical-align: middle;
+    }
+    tbody td{
+        font-size: 50px;
+    }
+    .marquee-block {
+        width: 1500px;
+    }
+}
+@keyframes dropdown {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .spans span{
+    float:left;
+    width:50%;
+  }
+  .marquee{
+    overflow: hidden;
+  }
+
+  .to-left {
+    animation: marqueeLeft 17s linear infinite;
+  }
+  .spans{
+    width: 200%;
+    overflow: hidden;
+    position: relative;
+  }
+  @keyframes marqueeLeft{
+    0% {
+      left: 0;
+    }
+    100% {
+      left: -100%;
+    }
+  }
